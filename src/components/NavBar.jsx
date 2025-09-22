@@ -1,11 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 
 function DarkToggle() {
-  const [dark, setDark] = useState(
-    localStorage.theme === "dark" ||
-      (!("theme" in localStorage) &&
-        window.matchMedia("(prefers-color-scheme: dark)").matches)
-  );
+  const [dark, setDark] = useState(localStorage.theme === "dark");
 
   useEffect(() => {
     if (dark) {
@@ -13,6 +9,7 @@ function DarkToggle() {
       localStorage.theme = "dark";
     } else {
       document.documentElement.classList.remove("dark");
+      // store explicit choice as "light" so next load stays light
       localStorage.theme = "light";
     }
   }, [dark]);
