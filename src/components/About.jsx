@@ -93,7 +93,6 @@ export default function About() {
                     Download My CV / Resume
                   </h4>
                   <p className="text-sm text-secondary mt-1">
-                    Want to see my full experience, skills, and projects?
                     Download my CV in PDF format or view it directly in your
                     browser.
                   </p>
